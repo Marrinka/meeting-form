@@ -45,8 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			currTime = timeStart.value,
 			currDate = date.value;
 		date.addEventListener('input', () => {
-			console.log(date.value);
-			console.log(currDate);
 			if (date.value < currDate) {
 				date.classList.add('wrongInfo');
 			}
@@ -65,8 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 
 		timeStart.addEventListener('input', () => {
-			console.log(date.value, currDate);
-			console.log(currTime, timeStart.value);
 			if (date.value == currDate && currTime > timeStart.value) {
 				timeStart.classList.add('wrongInfo');
 			}
@@ -130,12 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	const userInfo = document.querySelectorAll('.user-info__field input');
-	console.log(userInfo);
 	userInfo.forEach(el => {
 		el.addEventListener('input', () => {
 			if (el.value.match(/[^A-Za-zА-Яа-я]/)) {
 				el.classList.add('wrongInfo');
-				console.log(el);
 			}
 			else{
 				el.classList.remove('wrongInfo');
