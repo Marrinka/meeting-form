@@ -86,12 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	checkDate('#date', '#time-start', '#time-end');
 	resetButton.addEventListener('click', () => formReset(form));
 
-	form.addEventListener('submit', (e) => {
-		e.preventDefault();
-		const formData = new FormData(form); 
-		const json = JSON.stringify(Object.fromEntries(formData.entries()));
-		console.log(json);
-	});
 
 	if (!localStorage.getItem('tower')) localStorage.setItem('tower', 'A');
 	if (!localStorage.getItem('floor')) localStorage.setItem('floor', '3');
@@ -136,5 +130,30 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	});
+
+	function checkSubmit(formSelector) {
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const inputs = document.querySelectorAll('input'),
+				form = document.querySelector(formSelector);
+
+			let flag = 1;
+			inputs.forEach(item => {
+				if (item.classList.contains('wrongInfo')) flag*=0;
+			});
+        
+			if (flag) {
+				const formData = new FormData(form); 
+				const json = JSON.stringify(Object.fromEntries(formData.entries()));
+				console.log(json);
+			}
+			else {
+				alert('Форма заполнена некорректно!');
+			}
+
+		});
+	}
+
+	checkSubmit('.meeting-form');
 
 }); 
