@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting room</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-wrapper">
+        <div class="title">Назначить встречу</div>
+        <form class="meeting-form">
+            <div class="user-info">
+                <div class="user-info__field">
+                    <span>Имя</span>
+                    <input name="name" type="text" id="name" placeholder="Введите имя" required>
+                </div>
+                <div class="user-info__field">
+                    <span>Фамилия</span>
+                    <input name="surname" type="text" id="surname" placeholder="Введите фамилию" required>
+                </div>
+            </div>
+            <div class="meeting-room box">
+                <div class="meeting-room__choose">
+                    <label for="tower">Башня</label>
+                    <select name="tower" id="tower">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                    </select>
+                </div>
+                
+                <div class="meeting-room__choose">
+                    <label for="floor">Этаж</label>
+                    <select name="floor" id="floor">
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <!-- 3-27 -->
+                    </select>
+                </div>
+
+                <div class="meeting-room__choose">
+                    <label for="room">Переговорная</label>
+                    <select name="room" id="room">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <!-- 1-10 -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="meeting-date box">
+                <div class="meeting-date__choose">
+                    <span>Дата встречи</span>
+                    <input type="date" id="date">
+                </div>
+            </div>
+            <div class="meeting-time box">
+                <div class="meeting-time__choose">
+                    <span>Начало</span>
+                    <input type="time" id="time-start" name="time-start">
+                </div>
+                <div class="meeting-time__choose">
+                    <span>Окончание</span>
+                    <input type="time" id="time-end" name="time-end">
+                </div>
+            </div>
+
+            <div class="user-comment">
+                <textarea name="comment" id="commen" cols="30" rows="10" placeholder="Комментарий..."></textarea>
+            </div>
+
+            <div class="buttons">
+                <div class="reset-button">
+                    <button>Очистить</button>
+                </div>
+                <div class="send-button">
+                    <button type="submit">Отправить</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
